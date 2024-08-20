@@ -1,0 +1,17 @@
+/* Navbar.module.css */
+.navbar {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 0 4px 6px rgba(18, 177, 209, 0.2);
+  }
+  
+  .title {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 500;
+    color: #0094EF;
+    padding: 0.5rem 0;
+  }
+  
