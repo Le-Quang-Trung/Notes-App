@@ -38,6 +38,66 @@ const Home = () => {
             onDelete={() => {}}
             onPinNote={() => {}}
           />
+          <NoteCard
+            title="Danh sách các phim đã coi"
+            date="8th August 2024"
+            content="Loki SS2 ep5"
+            tags="#Phimmoichil"
+            isPinned={false}
+            onEdit={() => {}}
+            onDelete={() => {}}
+            onPinNote={() => {}}
+          />
+          <NoteCard
+            title="Danh sách các phim đã coi"
+            date="8th August 2024"
+            content="Loki SS2 ep5"
+            tags="#Phimmoichil"
+            isPinned={false}
+            onEdit={() => {}}
+            onDelete={() => {}}
+            onPinNote={() => {}}
+          />
+          <NoteCard
+            title="Danh sách các phim đã coi"
+            date="8th August 2024"
+            content="Loki SS2 ep5"
+            tags="#Phimmoichil"
+            isPinned={false}
+            onEdit={() => {}}
+            onDelete={() => {}}
+            onPinNote={() => {}}
+          />
+          <NoteCard
+            title="Danh sách các truyện đã đọc"
+            date="3rd August 2024"
+            content="TOG chap 300"
+            tags="#Manhwa"
+            isPinned={true}
+            onEdit={() => {}}
+            onDelete={() => {}}
+            onPinNote={() => {}}
+          />
+          <NoteCard
+            title="Danh sách các truyện đã đọc"
+            date="3rd August 2024"
+            content="TOG chap 300"
+            tags="#Manhwa"
+            isPinned={true}
+            onEdit={() => {}}
+            onDelete={() => {}}
+            onPinNote={() => {}}
+          />
+          <NoteCard
+            title="Danh sách các truyện đã đọc"
+            date="3rd August 2024"
+            content="TOG chap 300"
+            tags="#Manhwa"
+            isPinned={true}
+            onEdit={() => {}}
+            onDelete={() => {}}
+            onPinNote={() => {}}
+          />
         </div>
       </div>
 
