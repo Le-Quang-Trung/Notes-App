@@ -5,14 +5,17 @@ import { IoMdClose } from "react-icons/io";
 const SearchBar = ({ value, onChange, handleSearch, onClearSearch }) => {
   return (
     <div className="w-80 flex items-center px-4 bg-slate-100 rounded-md">
+      <FaMagnifyingGlass
+        className="text-slate-400 cursor-pointer hover:text-black mr-3"
+        // onClick={handleSearch}
+      />
       <input
         type="text"
         placeholder="Search Notes"
         className="w-full text-xs bg-transparent py-[11px] outline-none"
         value={value}
-        onChange={onChange}
+        onChange={(e) => onChange(e.target.value)} // Gọi tìm kiếm realtime
       />
-
       {value && (
         <IoMdClose
           className="text-xl text-slate-500 cursor-pointer hover:text-black mr-3"
@@ -20,10 +23,7 @@ const SearchBar = ({ value, onChange, handleSearch, onClearSearch }) => {
         />
       )}
       
-      <FaMagnifyingGlass
-        className="text-slate-400 cursor-pointer hover:text-black"
-        onClick={handleSearch}
-      />
+      
     </div>
   );
 };

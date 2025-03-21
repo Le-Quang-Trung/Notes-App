@@ -28,6 +28,7 @@ const Home = () => {
   const [userInfo, setUserInfo] = useState(null);
 
   const [isSearch, setIsSearch] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const navigate = useNavigate();
 
@@ -100,7 +101,16 @@ const Home = () => {
   };
 
   // Search for a Note
-  const onSearchNote = async (query) => {
+  const onSearchNote = async (query) => { 
+    setSearchQuery(query); // Cập nhật từ khóa tìm kiếm vào state
+
+    if (query.trim() === "") {
+      // Nếu xóa hết text -> Quay về danh sách ban đầu
+      setIsSearch(false);
+      getAllNotes();
+      return;
+    }
+
     try {
       const response = await axiosInstance.get("/search-notes", {
         params: { query },
@@ -137,9 +147,11 @@ const Home = () => {
   };
 
   const handleClearSearch = () => {
+    setSearchQuery("");
     setIsSearch(false);
     getAllNotes();
   };
+
 
   useEffect(() => {
     getAllNotes();
@@ -151,6 +163,7 @@ const Home = () => {
     <>
       <Navbar
         userInfo={userInfo}
+        searchQuery={searchQuery} // Truyền giá trị từ Home.jsx
         onSearchNote={onSearchNote}
         handleClearSearch={handleClearSearch}
       />
@@ -166,6 +179,7 @@ const Home = () => {
                 content={item.content}
                 tags={item.tags}
                 isPinned={item.isPinned}
+                searchQuery={searchQuery}
                 onEdit={() => handleEdit(item)}
                 onDelete={() => deleteNote(item)}
                 onPinNote={() => updateIsPinned(item)}

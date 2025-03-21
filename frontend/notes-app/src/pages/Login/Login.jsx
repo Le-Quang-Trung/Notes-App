@@ -53,7 +53,7 @@ const Login = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar isLoginPage={true} />
 
       <div className={styles.container}>
         <div className={styles.formWrapper}>
