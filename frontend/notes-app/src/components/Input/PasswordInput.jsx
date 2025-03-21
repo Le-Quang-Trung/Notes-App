@@ -1,42 +1,37 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import styles from "./PasswordInput.module.css"; // Import CSS module
 
-import { FaRegEye, FaRegEyeSlash} from "react-icons/fa6";
+const PasswordInput = ({ value, onChange, placeholder }) => {
+  const [isShowPassword, setIsShowPassword] = useState(false);
 
-const PasswordInput = ( {value, onChange, placeholder}) => {
-
-    const [isShowPassword, setIsShowPassword] = useState(false);
-    
-    const toggleShowPassword = () => {
-        setIsShowPassword(!isShowPassword);
-    };
+  const toggleShowPassword = () => {
+    setIsShowPassword(!isShowPassword);
+  };
 
   return (
-    <div className='flex items-center bg-transparent border-[1.5px] px-5 rounded mb-3'>
-        <input
-            value={value}
-            onChange={onChange}
-            type={isShowPassword ? "text" : "password"}
-            placeholder={placeholder || "Password"}
-            className='w-full text-sm bg-transparent py-3 mr-3 rounded outline-none'
-        />
-    
-        { isShowPassword ? (
-            <FaRegEye
-                size={22}
-                className="text-primary cursor-pointer"
-                onClick= {() => toggleShowPassword()}
-            /> 
-        ) : (
-            <FaRegEyeSlash
-                size={22}
-                className='text-slate-400 cursor-pointer'
-                onClick= {() => toggleShowPassword()}
-            />
-        )}
-    </div>
+    <div className={styles.passwordContainer}>
+      <input
+        value={value}
+        onChange={onChange}
+        type={isShowPassword ? "text" : "password"}
+        placeholder={placeholder || "Password"}
+        className={styles.passwordInput}
+      />
 
-    
+      {isShowPassword ? (
+        <FaRegEye
+          className={`${styles.icon} ${styles.iconPrimary}`}
+          onClick={toggleShowPassword}
+        />
+      ) : (
+        <FaRegEyeSlash
+          className={`${styles.icon} ${styles.iconGray}`}
+          onClick={toggleShowPassword}
+        />
+      )}
+    </div>
   );
 };
 
-export default PasswordInput
+export default PasswordInput;

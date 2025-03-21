@@ -1,0 +1,68 @@
+.note-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .note-card:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .note-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .note-title {
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500;
+  }
+  
+  .note-date {
+    font-size: 0.75rem; /* text-xs */
+    color: #64748b; /* text-slate-500 */
+  }
+  
+  .note-content {
+    font-size: 0.75rem; /* text-xs */
+    color: #475569; /* text-slate-600 */
+    margin-top: 0.5rem;
+  }
+  
+  .note-tags {
+    font-size: 0.75rem; /* text-xs */
+    color: #64748b; /* text-slate-500 */
+  }
+  
+  .note-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+  }
+  
+  .icon-btn {
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .icon-btn.text-primary {
+    color: #0094EF;
+  }
+  
+  .icon-btn.text-slate-300 {
+    color: #cbd5e1;
+  }
+  
+  .icon-btn:hover.text-green-600 {
+    color: #16a34a;
+  }
+  
+  .icon-btn:hover.text-red-600 {
+    color: #dc2626;
+  }
+  
