@@ -2,7 +2,6 @@ require("dotenv").config();
 
 const config = require("./config.json");
 const mongoose = require("mongoose");
-const cors = require("cors");
 
 mongoose.connect(config.connectionString);
 
@@ -10,6 +9,7 @@ const User = require("./models/user.model");
 const Note = require("./models/note.model");
 
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
 const jwt = require("jsonwebtoken");
@@ -19,9 +19,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://bom-notes-app.vercel.app", // Chỉ cho phép frontend của bạn truy cập
-    methods: "GET,POST,PUT,DELETE",
-    allowedHeaders: "Content-Type,Authorization",
+    origin: "*",
   })
 );
 

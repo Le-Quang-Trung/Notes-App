@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://bom-notes-app-backend.vercel.app/'
+export const BASE_URL = 'http://localhost:8000'
